@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="240dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardElevation="@dimen/movie_card_elevation"
+    android:outlineAmbientShadowColor="@color/light_gray"
+    android:layout_margin="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/padding_small">
+
+        <ImageView
+            android:id="@+id/movie_image"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_margin="@dimen/padding_small"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"/>
+
+        <TextView
+            android:id="@+id/movie_title"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/movie_image"
+            android:layout_alignTop="@id/movie_image"
+            android:layout_marginTop="@dimen/padding_small"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:textColor="@color/black"
+            tools:text="Movie title" />
+
+        <TextView
+            android:id="@+id/movie_overview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/movie_image"
+            android:layout_below="@id/movie_title"
+            android:layout_marginTop="6dp"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="6"
+            android:textColor="@color/black"
+            tools:text="Movie overview" />
+
+        <TextView
+            android:id="@+id/movie_release_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/movie_image"
+            android:layout_below="@id/movie_overview"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            tools:text="Movie release date" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
