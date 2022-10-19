@@ -1,19 +1,16 @@
 package com.xplor.moviesearchapp.data
 
-import androidx.lifecycle.asLiveData
-import androidx.lifecycle.viewModelScope
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
-import androidx.paging.cachedIn
 import com.xplor.moviesearchapp.api.MoviesApi
-import com.xplor.moviesearchapp.manager.AuthenticationManager
+import com.xplor.moviesearchapp.manager.CredentialsManager
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class MoviesRepository @Inject constructor(
     private val moviesApi: MoviesApi,
-    private val authManager: AuthenticationManager
+    private val credentialsManager: CredentialsManager
 ) {
     fun getMovieSearchResults(query: String) =
         Pager(
@@ -22,6 +19,6 @@ class MoviesRepository @Inject constructor(
                 maxSize = 80,
                 enablePlaceholders = false
             ),
-            pagingSourceFactory = { MoviesPagingSource(moviesApi, query, authManager) }
+            pagingSourceFactory = { MoviesPagingSource(moviesApi, query, credentialsManager) }
         )
 }

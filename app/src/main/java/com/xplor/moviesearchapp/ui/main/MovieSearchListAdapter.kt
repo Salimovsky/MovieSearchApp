@@ -10,7 +10,6 @@ import com.xplor.moviesearchapp.R
 import com.xplor.moviesearchapp.data.Movie
 import com.xplor.moviesearchapp.databinding.ItemMovieBinding
 import com.xplor.moviesearchapp.manager.ConfigManager
-import javax.inject.Inject
 
 
 class MovieSearchListAdapter(configManager: ConfigManager):

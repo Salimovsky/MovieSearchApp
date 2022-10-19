@@ -3,7 +3,7 @@ package com.xplor.moviesearchapp.data
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.xplor.moviesearchapp.api.MoviesApi
-import com.xplor.moviesearchapp.manager.AuthenticationManager
+import com.xplor.moviesearchapp.manager.CredentialsManager
 import retrofit2.HttpException
 import java.io.IOException
 
@@ -12,16 +12,15 @@ private const val MOVIES_SEARCH_START_PAGE_INDEX = 1
 class MoviesPagingSource(
     private val moviesApi: MoviesApi,
     private val query: String,
-    private val authManager: AuthenticationManager
+    private val credentialsManager: CredentialsManager
 ) : PagingSource<Int, Movie>() {
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Movie> {
         val pageIndex = params.key ?: MOVIES_SEARCH_START_PAGE_INDEX
 
         return try {
-            val response = moviesApi.searchMovie(apiKey = authManager.getToken(), query = query, page = pageIndex)
+            val response = moviesApi.searchMovie(apiKey = credentialsManager.getApiToken(), query = query, page = pageIndex)
             val movies = response.results
-
 
             LoadResult.Page(
                 data = movies ?: emptyList(),

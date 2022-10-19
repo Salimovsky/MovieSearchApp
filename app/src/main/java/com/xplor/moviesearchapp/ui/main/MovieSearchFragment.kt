@@ -11,20 +11,17 @@ import com.xplor.moviesearchapp.R
 import com.xplor.moviesearchapp.databinding.FragmentMainBinding
 import com.xplor.moviesearchapp.manager.ConfigManager
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_main.*
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class MovieSearchFragment : Fragment() {
-    @Inject
-    lateinit var configManager: ConfigManager
-
     companion object {
         fun newInstance() = MovieSearchFragment()
     }
 
+    @Inject
+    lateinit var configManager: ConfigManager
     private lateinit var viewModel: MoviesListViewModel
-
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
 
@@ -88,7 +85,7 @@ class MovieSearchFragment : Fragment() {
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
 
-                if (query != null) {
+                if (!query.isNullOrEmpty()) {
                     binding.recyclerView.scrollToPosition(0)
                     viewModel.searchMovies(query)
                     searchView.clearFocus()
@@ -106,5 +103,4 @@ class MovieSearchFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }

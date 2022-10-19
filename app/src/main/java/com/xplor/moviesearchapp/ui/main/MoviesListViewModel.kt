@@ -24,6 +24,6 @@ class MoviesListViewModel @Inject constructor(
     }
 
     companion object {
-        private const val DEFAULT_QUERY = "action"
+        private const val DEFAULT_QUERY = "movie"
     }
 }

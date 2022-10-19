@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">MovieSearchApp</string>
     <string name="search_hint">search movie..</string>
+    <string name="loading_error_message">Error loading result!\n Please try again..</string>
+    <string name="no_results_message">No results!</string>
+
 </resources>

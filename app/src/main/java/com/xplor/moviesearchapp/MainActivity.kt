@@ -7,11 +7,13 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    // Add splash screen to show spinner indicator till the app fetches its config from service
-    // add cache
-    // add localization
-    // add support for accessibility
-    // add unit tests
+//    TODO:
+//    + Add unit tests
+//    + Add support for accessibility
+//    + Migrate UI to use Jetpack Compose instead of views
+//    + Add navigation component
+//    + Add support for localization
+//    + Add splash screen to show spinner indicator till the app fetches its config from service
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

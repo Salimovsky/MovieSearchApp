@@ -15,6 +15,6 @@ class ConfigManager @Inject constructor() {
     private val profileSizes = listOf("w45","w185","h632","original")
     private val stillSizes = listOf("w92","w185","w300","original")
 
-    // add logic to figure out which size to use depending on device dimension and type, etc: tablet vs smartphone..
+    // add logic to figure out which image size to use depending on device dimension and type, etc: tablet vs smartphone..
     fun getThumbnailPath() =  imageBaseUrl + stillSizes[1]
 }
