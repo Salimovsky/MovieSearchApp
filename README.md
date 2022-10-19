@@ -8,3 +8,4 @@ TODO:
  + Add navigation component
  + Add support for localization
  + Add splash screen to show spinner indicator till the app fetches its config from service
+ + Save search state when app is killed: query, scroll position
