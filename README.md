@@ -7,3 +7,4 @@ TODO:
  + Migrate UI to use Jetpack Compose instead of views
  + Add navigation component
  + Add support for localization
+ + Add splash screen to show spinner indicator till the app fetches its config from service
